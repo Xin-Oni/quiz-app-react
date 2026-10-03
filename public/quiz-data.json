@@ -1,0 +1,343 @@
+[
+  {
+    "category": "html-css",
+    "question": "Webページの「構造や骨組み」を定義する言語はどれ？",
+    "options": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "answer": 0,
+    "explanation": "HTMLはWebページの構造を記述するための言語です。"
+  },
+  {
+    "category": "html-css",
+    "question": "Webページの「見た目やデザイン」を設定する言語はどれ？",
+    "options": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "answer": 1,
+    "explanation": "CSSは色、配置、フォントなどのスタイルを定義します。"
+  },
+  {
+    "category": "js",
+    "question": "Webページに「動的な動きや処理」を追加する言語はどれ？",
+    "options": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "answer": 2,
+    "explanation": "JavaScriptを使用することで、クリック時の処理やデータのやり取りなどの動きを実装できます。"
+  },
+  {
+    "category": "git-infra",
+    "question": "プログラムの変更履歴を記録・管理するための分散型バージョン管理システムはどれ？",
+    "options": [
+      "GitHub",
+      "Git",
+      "Cloudflare"
+    ],
+    "answer": 1,
+    "explanation": "Gitはローカルやリモートでコードの変更履歴を管理するツール本体です。"
+  },
+  {
+    "category": "git-infra",
+    "question": "Gitで管理しているコードをクラウド上で保存・共有できるプラットフォームはどれ？",
+    "options": [
+      "GitHub",
+      "VS Code",
+      "Cloudflare Pages"
+    ],
+    "answer": 0,
+    "explanation": "GitHubはGitリポジトリをオンラインでホスティング・管理するサービスです。"
+  },
+  {
+    "category": "git-infra",
+    "question": "GitHubと連携して、静的Webサイトを高速に世界へ配信できるホスティングサービスはどれ？",
+    "options": [
+      "Cloudflare Pages",
+      "Docker",
+      "Node.js"
+    ],
+    "answer": 0,
+    "explanation": "Cloudflare PagesはGitHubリポジトリから自動でWebサイトをデプロイ・公開できます。"
+  },
+  {
+    "category": "html-css",
+    "question": "HTMLファイル内で外部CSSファイルを読み込む際に使うタグはどれ？",
+    "options": [
+      "<script>",
+      "<style>",
+      "<link>"
+    ],
+    "answer": 2,
+    "explanation": "<link rel=\"stylesheet\" href=\"style.css\"> のようにして読み込みます。"
+  },
+  {
+    "category": "html-css",
+    "question": "HTMLファイル内で外部JavaScriptファイルを読み込む際に使うタグはどれ？",
+    "options": [
+      "<script>",
+      "<js>",
+      "<link>"
+    ],
+    "answer": 0,
+    "explanation": "<script src=\"script.js\"></script> のように指定します。"
+  },
+  {
+    "category": "git-infra",
+    "question": "ブラウザ上でエラー確認や変数の値チェック（console.logなど）を行うためのツールはどれ？",
+    "options": [
+      "デベロッパーツール（開発者ツール）",
+      "ターミナル",
+      "Cloudflare Dashboard"
+    ],
+    "answer": 0,
+    "explanation": "ブラウザでF12キーや右クリック「検証」から開けるデベロッパーツールを使います。"
+  },
+  {
+    "category": "html-css",
+    "question": "Webサイトのトップページとしてブラウザが自動的に参照する標準的なファイル名はどれ？",
+    "options": [
+      "main.html",
+      "index.html",
+      "home.html"
+    ],
+    "answer": 1,
+    "explanation": "Webサーバーはデフォルトで index.html を一番最初に読み込みます。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptで外部ファイルやAPIから非同期にデータを取得するために使う標準APIはどれ？",
+    "options": [
+      "fetch()",
+      "get()",
+      "ajax()"
+    ],
+    "answer": 0,
+    "explanation": "fetch APIを使用することで、ページを再読み込みせずにサーバーからデータを取得できます。"
+  },
+  {
+    "category": "js",
+    "question": "データの構造化や軽量なデータ交換フォーマットとして広く使われている記法はどれ？",
+    "options": [
+      "XML",
+      "JSON",
+      "CSV"
+    ],
+    "answer": 1,
+    "explanation": "JSON (JavaScript Object Notation) は軽量で直感的なデータ記述形式です。"
+  },
+  {
+    "category": "js",
+    "question": "ブラウザにデータを永続的に保存（タブを閉じても保持）できるWeb Storageの仕組みはどれ？",
+    "options": [
+      "sessionStorage",
+      "localStorage",
+      "Cookie"
+    ],
+    "answer": 1,
+    "explanation": "localStorageは削除しない限りブラウザ内に永続的にデータを保存できます。"
+  },
+  {
+    "category": "git-infra",
+    "question": "Webフォームなどでサーバーへデータを「送信・新規作成」する際によく使われるHTTPメソッドはどれ？",
+    "options": [
+      "GET",
+      "POST",
+      "DELETE"
+    ],
+    "answer": 1,
+    "explanation": "データ取得にはGET、データ送信・作成にはPOSTメソッドを使用するのが標準的です。"
+  },
+  {
+    "category": "git-infra",
+    "question": "Webサイトの通信を暗号化し、安全に通信を行うためのプロトコル（URLがhttps://で始まるもの）はどれ？",
+    "options": [
+      "HTTP",
+      "HTTPS",
+      "FTP"
+    ],
+    "answer": 1,
+    "explanation": "HTTPSはSSL/TLSによって通信内容を暗号化して保護する標準規格です。"
+  },
+  {
+    "category": "html-css",
+    "question": "ユーザーの画面サイズやデバイス（スマホ/PC）に応じてレイアウトを調整するWebデザイン手法はどれ？",
+    "options": [
+      "レスポンシブWebデザイン",
+      "ダイナミックデザイン",
+      "アダプティブレイアウト"
+    ],
+    "answer": 0,
+    "explanation": "CSSのメディアクエリなどを用いて画面幅に応じたデザインを適用します。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptの非同期処理において、処理の完了や失敗を扱うためのオブジェクト構造はどれ？",
+    "options": [
+      "Promise",
+      "Callback",
+      "Event"
+    ],
+    "answer": 0,
+    "explanation": "Promise（およびasync/await）を使用することで、非同期処理をわかりやすく記述できます。"
+  },
+  {
+    "category": "git-infra",
+    "question": "悪意のあるスクリプトがWebサイトに注入され、Cookieの奪取などを引き起こす脆弱性はどれ？",
+    "options": [
+      "SQLインジェクション",
+      "XSS（クロスサイトスクリプティング）",
+      "CSRF"
+    ],
+    "answer": 1,
+    "explanation": "XSSはユーザーが入力した内容を適切にエスケープ処理しないことで発生する脆弱性です。"
+  },
+  {
+    "category": "git-infra",
+    "question": "Node.jsなどでライブラリやパッケージを管理・インストールするために使うコマンドラインツールはどれ？",
+    "options": [
+      "npm",
+      "git",
+      "pip"
+    ],
+    "answer": 0,
+    "explanation": "npm (Node Package Manager) はJavaScript用のライブラリ管理ツールです。"
+  },
+  {
+    "category": "git-infra",
+    "question": "認証・データベース・ストレージなどのバックエンド機能をワンストップで提供するBaaS（Backend as a Service）はどれ？",
+    "options": [
+      "Supabase",
+      "VS Code",
+      "Vite"
+    ],
+    "answer": 0,
+    "explanation": "SupabaseやFirebaseは、バックエンド処理やDBを簡単に扱えるサービスです。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptで外部ファイルやAPIからデータを非同期で取得するための標準関数はどれ？",
+    "options": [
+      "fetch()",
+      "get()",
+      "request()"
+    ],
+    "answer": 0,
+    "explanation": "fetch() を使用することで、ページ全体をリロードせずに外部のJSONファイルなどのデータを取得できます。"
+  },
+  {
+    "category": "js",
+    "question": "非同期処理の完了を待機し、コードを上から順に実行させるために await とセットで使うキーワードはどれ？",
+    "options": [
+      "defer",
+      "async",
+      "sync"
+    ],
+    "answer": 1,
+    "explanation": "async を付与した関数内でのみ await キーワードを使用して非同期処理の完了を待つことができます。"
+  },
+  {
+    "category": "js",
+    "question": "ブラウザを閉じてもデータが保持され、最高スコアの保存などに使われるWeb Storage機能はどれ？",
+    "options": [
+      "sessionStorage",
+      "localStorage",
+      "Cookie"
+    ],
+    "answer": 1,
+    "explanation": "localStorageは明示的に削除しない限り、ブラウザ内に半永久的にデータを保持できます。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptで1秒（1000ミリ秒）ごとに特定の処理を繰り返し実行させたい場合に使う関数はどれ？",
+    "options": [
+      "setTimeout()",
+      "setInterval()",
+      "clearInterval()"
+    ],
+    "answer": 1,
+    "explanation": "setInterval(関数, 1000) と記述することで、1秒ごとに指定した処理を繰り返し実行できます。"
+  },
+  {
+    "category": "js",
+    "question": "setInterval() で開始したタイマー処理を途中で停止させるために使用する関数はどれ？",
+    "options": [
+      "stopInterval()",
+      "clearTimeout()",
+      "clearInterval()"
+    ],
+    "answer": 2,
+    "explanation": "clearInterval(タイマーID) を実行することで、動作中の繰り返し処理を停止できます。"
+  },
+  {
+    "category": "git-infra",
+    "question": "HTML・CSS・JSのみで構成され外部通信がないアプリを、PCのブラウザで直接ファイル（file:///）を開いて実行できる理由はどれ？",
+    "options": [
+      "外部とのファイル読み込み通信が発生せず、セキュリティ制限を受けないため",
+      "ブラウザが自動的にクラウドサーバーへ接続してくれるため",
+      "JavaScriptが常に暗号化されて実行されるため"
+    ],
+    "answer": 0,
+    "explanation": "外部データの取得処理がない単一のファイル構造であれば、Webサーバーを経由しなくてもローカルのブラウザでそのまま動作します。"
+  },
+  {
+    "category": "git-infra",
+    "question": "fetch() を使ってローカルの外部ファイル（quiz-data.jsonなど）を直接開こうとした際、ブラウザのセキュリティ制限でエラーになる理由はどれ？",
+    "options": [
+      "file:/// プロトコルでの通信は安全性が確認できず、ブラウザのセキュリティ（CORS）でブロックされるため",
+      "JavaScriptがJSONファイルを認識できない仕様になっているため",
+      "JSONファイルを開くには常にパスワードが必要となるため"
+    ],
+    "answer": 0,
+    "explanation": "ブラウザはセキュリティ上、ローカルファイル（file:///）からの外部通信を危険と判断してブロックするため、Webサーバー環境が必要です。"
+  },
+  {
+    "category": "git-infra",
+    "question": "PCローカル環境で fetch() を使うコードをエラーなく動作・テストするために使うツールはどれ？",
+    "options": [
+      "VS Code の「Live Server」拡張機能（ローカルWebサーバー）",
+      "Google Chrome の「シークレットモード」",
+      "Windows の「コマンドプロンプト」"
+    ],
+    "answer": 0,
+    "explanation": "Live Server などを利用して擬似的なWebサーバー環境（http://...）を立ち上げることで、ローカルでも fetch 通信が正常に動くようになります。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptで配列の中から特定の条件に合う要素だけを抽出して新しい配列を作るメソッドはどれ？",
+    "options": [
+      ".map()",
+      ".filter()",
+      ".find()"
+    ],
+    "answer": 1,
+    "explanation": ".filter() を使うことで、条件を満たす要素のみを取り出した新しい配列を作成できます。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptの .filter() メソッドに関する説明として正しいものはどれ？",
+    "options": [
+      "元の配列を直接書き換えて要素を削除する",
+      "元の配列は変更せず、条件に合う要素だけを含んだ新しい配列を返す",
+      "条件に最初に一致した1つの要素だけを文字列として返す"
+    ],
+    "answer": 1,
+    "explanation": ".filter() は元データを保持したまま条件に合う要素のみを集めた新しい配列を作成（非破壊）します。"
+  },
+  {
+    "category": "js",
+    "question": "JavaScriptでHTML要素を画面上から非表示にする際に指定するCSSプロパティ操作はどれ？",
+    "options": [
+      "element.style.display = 'none'",
+      "element.style.hidden = 'true'",
+      "element.style.visible = 'false'"
+    ],
+    "answer": 0,
+    "explanation": "style.display = 'none' を指定することで、指定したHTML要素を非表示（レイアウト上も消去）にできます。"
+  }
+]
