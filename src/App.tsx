@@ -199,7 +199,13 @@ function StartScreen({ userEmail, onStart }: { userEmail: string; onStart: (cate
 }
 
 // 3. クイズ画面コンポーネント
-function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, onFinish }: any) {
+function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, onFinish }: {
+  quizData: QuizItem[];
+  currentQuestion: number;
+  setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
+  onFinish: () => void;
+}) {
   const current = quizData[currentQuestion];
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
@@ -229,7 +235,7 @@ function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, o
     setSelectedIdx(idx);
     setShowExplanation(true);
     if (idx === current.answer) {
-      setScore((prev: number) => prev + 1);
+      setScore(prev => prev + 1);
     }
   };
 
@@ -237,7 +243,7 @@ function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, o
     setSelectedIdx(null);
     setShowExplanation(false);
     if (currentQuestion + 1 < quizData.length) {
-      setCurrentQuestion((prev: number) => prev + 1);
+      setCurrentQuestion(prev => prev + 1);
     } else {
       onFinish();
     }
@@ -250,7 +256,7 @@ function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, o
       <div className="question">{current.question}</div>
 
       <div className="options">
-        {current.options.map((opt: string, idx: number) => {
+        {current.options.map((opt, idx) => {
           let className = "option-btn";
           if (selectedIdx !== null) {
             if (idx === current.answer) className += " correct";
@@ -287,7 +293,7 @@ function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, o
 
 // 4. 結果画面コンポーネント
 function ResultScreen({ score, totalQuestions, onRestart }: { score: number; totalQuestions: number; onRestart: () => void }) {
-  const savedHighScore = localStorage.getItem("quizHighScore") || 0;
+  const savedHighScore = localStorage.getItem("quizHighScore") || "0";
   const isNewRecord = score > Number(savedHighScore);
 
   if (isNewRecord) {
