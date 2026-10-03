@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 // バックエンド API URL（既存の Cloudflare Workers API）
@@ -28,7 +28,6 @@ function App() {
   const [quizData, setQuizData] = useState<QuizItem[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
   // アプリ起動時に public/quiz-data.json を取得
   useEffect(() => {
@@ -47,7 +46,6 @@ function App() {
 
   // クイズ開始処理
   const handleStartQuiz = (category: string) => {
-    setSelectedCategory(category);
     const filtered = category === 'all' 
       ? allQuizData 
       : allQuizData.filter(q => q.category === category);
@@ -96,7 +94,6 @@ function App() {
           quizData={quizData} 
           currentQuestion={currentQuestion}
           setCurrentQuestion={setCurrentQuestion}
-          score={score}
           setScore={setScore}
           onFinish={() => setScreen('result')}
         />
@@ -115,11 +112,10 @@ function App() {
 }
 
 // --------------------------------------------------
-// 以下、簡易コンポーネント（次ステップで別ファイルに分割可能）
+// 各画面コンポーネント
 // --------------------------------------------------
 
 // 1. 認証画面コンポーネント
-// AuthScreen コンポーネント部分のみ差し替え
 function AuthScreen({ apiUrl, onLoginSuccess }: { apiUrl: string; onLoginSuccess: (user: User) => void }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -190,8 +186,8 @@ function AuthScreen({ apiUrl, onLoginSuccess }: { apiUrl: string; onLoginSuccess
 function StartScreen({ userEmail, onStart }: { userEmail: string; onStart: (category: string) => void }) {
   return (
     <div id="start-screen">
-      <p style={{ color: '#0070f3', fontWeight: 'bold' }}>ログイン中: {userEmail}</p>
-      <p>挑戦したいカテゴリを選択してください：</p>
+      <p style={{ color: '#0070f3', fontWeight: 'bold', textAlign: 'center', marginBottom: '1rem' }}>ログイン中: {userEmail}</p>
+      <p style={{ textAlign: 'center', marginBottom: '1rem' }}>挑戦したいカテゴリを選択してください：</p>
       <div className="options">
         <button onClick={() => onStart('all')} className="option-btn">🌟 全ジャンルからランダム</button>
         <button onClick={() => onStart('html-css')} className="option-btn">🎨 HTML / CSS 編</button>
@@ -203,13 +199,13 @@ function StartScreen({ userEmail, onStart }: { userEmail: string; onStart: (cate
 }
 
 // 3. クイズ画面コンポーネント
-function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, score, setScore, onFinish }: any) {
+function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, setScore, onFinish }: any) {
   const current = quizData[currentQuestion];
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [timeLeft, setTimeLeft] = useState(10);
 
-  // タイマー処理 (useEffect)
+  // タイマー処理
   useEffect(() => {
     if (selectedIdx !== null) return;
 
@@ -250,7 +246,7 @@ function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, score, setS
   return (
     <div id="quiz-screen">
       <div className="progress">問題 {currentQuestion + 1} / {quizData.length}</div>
-      <div className="timer" style={{ color: '#d9534f', fontWeight: 'bold' }}>残り時間: {timeLeft}秒</div>
+      <div className="timer">残り時間: {timeLeft}秒</div>
       <div className="question">{current.question}</div>
 
       <div className="options">
@@ -274,14 +270,14 @@ function QuizScreen({ quizData, currentQuestion, setCurrentQuestion, score, setS
       </div>
 
       {showExplanation && (
-        <div className="explanation" style={{ marginTop: '1rem', padding: '0.8rem', background: '#e9ecef', borderRadius: '6px' }}>
+        <div style={{ marginTop: '1rem', padding: '0.8rem', background: '#e2e8f0', borderRadius: '8px', fontSize: '0.95rem' }}>
           {selectedIdx === null && timeLeft === 0 && "⏰ タイムオーバー！ "}
           {current.explanation}
         </div>
       )}
 
       {showExplanation && (
-        <button onClick={handleNext} className="next-btn" style={{ marginTop: '1.5rem', width: '100%', padding: '0.8rem', background: '#0070f3', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
+        <button onClick={handleNext} className="btn-primary" style={{ marginTop: '1.2rem' }}>
           {currentQuestion + 1 < quizData.length ? "次の問題へ" : "結果を見る"}
         </button>
       )}
@@ -299,13 +295,13 @@ function ResultScreen({ score, totalQuestions, onRestart }: { score: number; tot
   }
 
   return (
-    <div id="result-screen">
+    <div id="result-screen" style={{ textAlign: 'center' }}>
       <h2>結果発表</h2>
-      <p style={{ fontSize: '1.4rem', fontWeight: 'bold' }}>{totalQuestions}問中 {score} 問正解でした！</p>
-      <p style={{ color: isNewRecord ? '#28a745' : '#666', fontWeight: 'bold' }}>
+      <p style={{ fontSize: '1.3rem', fontWeight: 'bold', margin: '1rem 0' }}>{totalQuestions}問中 {score} 問正解でした！</p>
+      <p style={{ color: isNewRecord ? '#22c55e' : '#64748b', fontWeight: 'bold', marginBottom: '1.5rem' }}>
         {isNewRecord ? `🎉 最高記録更新！ 最高スコア: ${score} / ${totalQuestions}` : `最高スコア: ${savedHighScore} / ${totalQuestions}`}
       </p>
-      <button onClick={onRestart} className="restart-btn" style={{ marginTop: '1.5rem', width: '100%', padding: '0.8rem', background: '#0070f3', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
+      <button onClick={onRestart} className="btn-primary">
         もう一度挑戦する
       </button>
     </div>
